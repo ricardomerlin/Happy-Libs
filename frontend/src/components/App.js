@@ -9,8 +9,9 @@ Modal.setAppElement('#root')
 function App() {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [defaultStory, setDefaultStory] = useState('');
+  const [defaultStories, setDefaultStories] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [defaultStoryInput, setDefaultStoryInput] = useState('');
   const [stories, setStories] = useState([]);
   const [isTop, setIsTop] = useState(true);
 
@@ -21,6 +22,8 @@ function App() {
       setIsTop(Math.min(1, scrollTop / windowHeight));
     };
   
+    checkScroll();
+  
     window.addEventListener('scroll', checkScroll);
     return () => {
       window.removeEventListener('scroll', checkScroll);
@@ -30,9 +33,14 @@ function App() {
   useEffect(() => {
     getStories()
   }, [])
+
+  console.log(defaultStories)
   
   function getStories() {
-    fetch('http://127.0.0.1:5555/stories')
+    fetch('http://localhost:3000/default_stories')
+    .then(response => response.json())
+    .then(data => setDefaultStories(data))
+    fetch('http://localhost:3000/custom_stories')
       .then(response => response.json())
       .then(data => setStories(data))
   }
@@ -48,13 +56,13 @@ function App() {
   function handleDefaultStorySubmit(e) {
       e.preventDefault();
       setSubmitSuccess(true);
-      fetch('http://127.0.0.1:5555/default_stories', {
+      fetch('http://localhost:3000/default_stories', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-              "content": defaultStory
+              "content": defaultStoryInput
           })
       })
       .then(response => {
@@ -66,24 +74,30 @@ function App() {
       }
 
   return (
-    <div>
-      <div className='title-container' style={{ opacity: isTop ? 0 : 1 }}>        <h1 className='text-center'>HappyLibs</h1>
+    <div className='App'>
+      <div className='title-container' style={{ opacity: isTop ? 0 : 1 }}>
+        <h1 className='text-center'>HappyLibs</h1>
       </div>
-      <div style={{ paddingTop: '4em' }}> 
+      <div style={{ paddingTop: '5em' }}> 
+      <h3 className='main-text'>Welcome to HappyLibs! The idea here is simple - plug in the corresponding word type with what is requested above the text boxes and hit submit to generate a random story. If you are confused about any definitions, hover over the word type for a brief definition and examples.</h3>
         <br></br>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <AdjectiveForm getStories={getStories}/>
-          <Posts stories={stories}/>
+        <div className='open-modal'>
+          <p>Interested in submitting your own story template for others to use in the future?</p>
+          <button className='open-modal-button' onClick={() => setModalIsOpen(true)}>Click here!</button>
         </div>
-        <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
-        <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-          <h2>Modal Title</h2>
-          <p>Modal Body</p>
+        <div style={{ display: 'block' }}>
+          <AdjectiveForm getStories={getStories} defaultStories={defaultStories}/>
+          <Posts stories={stories} getStories={getStories}/>
+        </div>
+        <Modal 
+        isOpen={modalIsOpen} 
+        onRequestClose={() => setModalIsOpen(false)}
+        >
           <form onSubmit={handleDefaultStorySubmit}>
             <textarea 
               style={{width: '100%', height: '200px'}} 
               placeholder="Enter your story here..."
-              onChange={(e) => setDefaultStory(e.target.value)}
+              onChange={(e) => setDefaultStoryInput(e.target.value)}
             />
             {submitSuccess ? <p>Submitted!</p> : <button>Submit</button>}
           </form>
