@@ -1,0 +1,384 @@
+body {
+  background-color: #deffce;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+.App {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.title-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1vw;
+  background: linear-gradient(180deg, rgba(141, 255, 172, 1), rgba(255, 255, 255, 0));  z-index: 100;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #060809;
+}
+
+.main-text {
+  font-size: 2vw;
+  color: #060809;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+}
+
+.main-text:hover {
+  transform: scale(1.01);
+}
+
+.open-modal {
+  padding: 5px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  margin: 4px 2px;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.open-modal-button {
+  padding: 5px 5px;
+  font-size: 16px;
+  margin: 4px 2px;
+  width: 15%;
+  font-size: 1.5vw;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s ease 0s;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.input-list {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4vw;
+  width: 100%;
+  padding: 2vw;
+  border-radius: 10px;
+  background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
+  margin: 10px;
+}
+
+.input-slot > input {
+  margin: 10px;
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #8dffac;
+}
+
+.submit-form-button {
+  padding: 5px 10px;
+  font-size: 1.5vw;
+  margin: 4px 2px;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.individual-card {
+  border-radius: 15px;
+  background: #ffffff;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+  font-size: 20px;
+  flex: 0 0 calc(50% - 10px);
+}
+
+.like-button {
+  width: 20%;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+
+.individual-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+@media (max-width: 1200px){
+  .individual-card {
+      flex: 0 0 calc(50% - 10px);
+      font-size: 17px;
+  }
+  .input-slot > input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .individual-card {
+    flex: 0 0 calc(100% - 10px);
+    font-size: 14px;
+  }
+  .individual-card > .like-button {
+    width: 20%;
+  }
+  .input-slot > input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .individual-card {
+    font-size: 11px;
+  }
+  .individual-card > .like-button {
+    width: 20%;
+  }
+  .input-slot > input {
+    width: 60%;
+  }
+}
+
+
+.App {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.title-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1vw;
+  background: linear-gradient(180deg, rgba(141, 255, 172, 1), rgba(255, 255, 255, 0));  z-index: 100;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #060809;
+}
+
+.main-text {
+  font-size: 2vw;
+  color: #060809;
+  margin: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+}
+
+.main-text:hover {
+  transform: scale(1.01);
+}
+
+.open-modal {
+  padding: 5px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  margin: 4px 2px;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.open-modal-button {
+  padding: 5px 5px;
+  font-size: 16px;
+  margin: 4px 2px;
+  width: 15%;
+  font-size: 1.5vw;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background-color: #8dffac;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.input-list {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4vw;
+  width: 100%;
+  padding: 2vw;
+  border-radius: 10px;
+  background-color: #8dffac;
+  margin: 10px;
+}
+
+.input-slot > input {
+  margin: 10px;
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #8dffac;
+}
+
+.submit-form-button {
+  padding: 5px 10px;
+  font-size: 1.5vw;
+  margin: 4px 2px;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.individual-card {
+  border-radius: 15px;
+  background: #ffffff;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+  font-size: 20px;
+  flex: 0 0 calc(50% - 10px);
+}
+
+.like-button {
+  width: 20%;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+
+.individual-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+@media (max-width: 1200px){
+  .individual-card {
+      flex: 0 0 calc(50% - 10px);
+      font-size: 17px;
+  }
+  .input-slot > input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .individual-card {
+    flex: 0 0 calc(100% - 10px);
+    font-size: 14px;
+  }
+  .individual-card > .like-button {
+    width: 20%;
+  }
+  .input-slot > input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .individual-card {
+    font-size: 11px;
+  }
+  .individual-card > .like-button {
+    width: 20%;
+  }
+  .input-slot > input {
+    width: 60%;
+  }
+}
