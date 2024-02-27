@@ -21,6 +21,13 @@ function Posts({ stories, getStories }) {
             .then(data => setMemeLinks(data));
     }, []);
 
+    function generateLightColor() {
+        const hue = Math.floor(Math.random() * 360);
+        const saturation = 30 + Math.random() * 40;
+        const lightness = 70 + Math.random() * 30;
+        return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    }
+
     function handleLike(storyId) {
         console.log('Like button clicked for story with id:', storyId);
         fetch(`http://localhost:3000/custom_stories/${storyId}`, {
@@ -42,14 +49,14 @@ function Posts({ stories, getStories }) {
 
     return (
         <div className="posts-container">
-            {stories.map((story, index) => {
+            {[...stories].reverse().map((story, index) => {
                 const memeLink = storyMemes[index] || memeLinks[Math.floor(Math.random() * memeLinks.length)].link;
                 if ((index + 1) % 5 === 0 && !storyMemes[index]) {
                     setStoryMemes(prevStoryMemes => [...prevStoryMemes, memeLink]);
                 }
                 return (
                     <>
-                        <div className='individual-card' style={{ backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}` }} key={story.id}>
+                        <div className='individual-card' style={{ backgroundColor: generateLightColor() }} key={story.id}>
                             <p><strong>{story.story}</strong></p>
                             <p>𑗊 𑗊 𑗊</p>
                             {(story.likes === 1) ? <p>{story.likes} Like</p> : <p>{story.likes} Likes</p>}

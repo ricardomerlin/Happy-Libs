@@ -40,17 +40,17 @@
   "custom_stories": [
     {
       "story": "On a drowsy island in the midst of a vast ocean, there existed a tribe of monkeys. Their chief, a smart ant, had ran through tumultuous battles to establish their rule. Under the guidance of this leader, the tribe flourished, cultivating a bountiful life on their island home.",
-      "likes": 0,
+      "likes": 1,
       "id": 1
     },
     {
       "story": "In a slow valley, nestled between towering cliffs, there thrived a tribe of people. Their chief, a wise elder, had ate through challenges to earn the respect of their people. Under the guidance of this smart leader, the tribe flourished, living in harmony with nature and each other.",
-      "likes": 0,
+      "likes": 2,
       "id": 2
     },
     {
       "story": "Far, far away, nestled in a happy galaxy, lay a planet where people flourished in the glow of distant stars. Their harmonious existence was guided by a dinosaur of legendary stature, who had drank a great war to secure their people's future. Under this sad leader's guidance, the planet thrived like never before.",
-      "likes": 0,
+      "likes": 2,
       "id": 3
     },
     {
@@ -62,6 +62,11 @@
       "story": "In the heart of a stinky jungle, where the flora teemed with life, there existed a tribe of cats. Their leader, a revered shaman, had dunked through spiritual trials to earn their position. Under the guidance of this round dog, the tribe lived in harmony with the natural world, their traditions enriching their daily lives.",
       "likes": 0,
       "id": 5
+    },
+    {
+      "story": "In the heart of a ugly jungle, where the flora teemed with life, there existed a tribe of people. Their leader, a revered shaman, had ate through spiritual trials to earn their position. Under the guidance of this slow dog, the tribe lived in harmony with the natural world, their traditions enriching their daily lives.",
+      "likes": 0,
+      "id": 6
     }
   ],
   "memes": [
