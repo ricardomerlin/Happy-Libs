@@ -23,12 +23,12 @@ To run the program on your machine:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ricardomerlin/HappyLibs
+git clone https://github.com/ricardomerlin/Happy-Libs
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd happy-libs
+cd Happy-Libs
 ```
 
 3. Install necessary packages:
